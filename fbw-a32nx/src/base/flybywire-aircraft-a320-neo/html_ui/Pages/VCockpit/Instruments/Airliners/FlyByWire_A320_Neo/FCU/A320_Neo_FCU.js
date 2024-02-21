@@ -179,7 +179,11 @@ class A320_Neo_FCU_Component {
     }
     setTextElementActive(_text, _active) {
         if (_text != null) {
-            _text.setAttribute("class", "Common " + (_active ? "Active" : "Inactive"));
+            if (_active === true) {
+                _text.classList.replace("Inactive", "Active");
+            } else {
+                _text.classList.replace("Active", "Inactive");
+            }
         }
     }
     setElementVisibility(_element, _show) {
